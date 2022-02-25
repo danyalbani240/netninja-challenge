@@ -38,10 +38,25 @@ main {
     justify-content: space-between;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+    z-index: 3;
+}
+.nav {
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+.nav.active {
+    width: 300px;
+    transition: all 0.5 ease-in-out;
 }
 .burger .line {
     width: 100%;
-    height: 5px;
+    height: 2px;
     background-color: white;
     transition: all 0.5s ease-in-out;
 }
@@ -50,16 +65,23 @@ main {
 }
 .hidden {
     display: none;
+    width: 0px !important;
 }
 .burger.active .line:nth-child(2) {
     display: none;
     margin-left: 10px;
 }
 .burger.active .line:first-child {
+    background-color: black;
+    height: 5px;
+    z-index: 3;
     rotate: 45deg;
     margin-top: 19.5px;
 }
 .burger.active .line:nth-child(3) {
+    background-color: black;
+    height: 5px;
+    z-index: 3;
     rotate: -45deg;
     margin-bottom: 19.5px;
 }
